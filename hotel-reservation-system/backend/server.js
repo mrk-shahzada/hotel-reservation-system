@@ -15,7 +15,7 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 5,
-  ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: true } : undefined
+  ssl: process.env.DB_SSL === "false" ? { rejectUnauthorized: true } : undefined
 });
 
 app.get("/", (req, res) => {
